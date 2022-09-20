@@ -25,7 +25,7 @@ app.get("/rates", (req, res) => {
       const { priceUsd } = response.data.data;
       res.send(`"usd": "${priceUsd}"`);
     })
-    .catch((error) => {
+    .catch(() => {
       res.status(404).send({ message: "Non-existent cryptocurrency!" });
     });
 });
